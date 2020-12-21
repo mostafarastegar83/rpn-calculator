@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+  <appender name="FILE-ROLLING" class="ch.qos.logback.core.FileAppender">
+    <file>logs/result.log</file>
+    <append>true</append>
+    <encoder>
+      <Pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>
+    </encoder>
+  </appender>
+
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <Pattern>
+        %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
+      </Pattern>
+    </layout>
+  </appender>
+
+  <logger name="com.mostafa.codechallenge.rpncalculator" level="INFO" additivity="false">
+    <appender-ref ref="FILE-ROLLING"/>
+  </logger>
+
+  <root level="ERROR">
+    <appender-ref ref="FILE-ROLLING"/>
+    <appender-ref ref="CONSOLE"/>
+  </root>
+
+</configuration>
