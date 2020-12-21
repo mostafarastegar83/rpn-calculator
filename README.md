@@ -32,7 +32,7 @@ be created accordingly.
 
 ### Build and run tests:
 ```shell
-mvn clean verify
+mvn clean test
 ```
 
 ### Build application without tests:
